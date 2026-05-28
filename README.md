@@ -87,4 +87,4 @@ This is an independent, third-party browser extension. It is **not affiliated wi
 
 ---
 
-Made by [Utku Kuşçu](https://github.com/utkukuscu) — because I got tired of seeing the same shows every time I opened Netflix.
+Made by [Utku Kuşcu](https://github.com/utkukuscu) — because I got tired of seeing the same shows every time I opened Netflix.
