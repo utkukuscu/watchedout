@@ -1,0 +1,28 @@
+  <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WatchedOut</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">WatchedOut</h1>
+      <span id="count" class="header__count">0</span>
+    </header>
+
+    <p id="empty" class="empty" hidden>
+      Nothing hidden yet. Hover over a card on Netflix and click the × button in the top-right.
+    </p>
+
+    <ul id="list" class="list"></ul>
+
+    <footer class="footer">
+      <button id="clearAll" type="button" class="footer__btn" disabled>
+        Restore All
+      </button>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+/*
+ * Netflix Gizle - kart uzerine enjekte edilen × butonu ve gizleme stili.
+ * Netflix kendi CSS'iyle override etmesin diye gizleme kuralinda !important kullanildi.
+ */
+
+/* Sadece kucuk kart'lara position:relative ekle; preview modal'larin kendi
+   fixed/absolute konumlandirmasini bozmamak icin onlari haric tutuyoruz. */
+.title-card[data-nf-hide-injected="1"],
+.title-card-container[data-nf-hide-injected="1"],
+.titleCard[data-nf-hide-injected="1"],
+.title-card-tile[data-nf-hide-injected="1"],
+.slider-item[data-nf-hide-injected="1"],
+.search-title[data-nf-hide-injected="1"],
+[data-uia="title-card"][data-nf-hide-injected="1"],
+[data-uia="title-card-container"][data-nf-hide-injected="1"] {
+  position: relative;
+}
+
+.nf-hide-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  transition: opacity 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  line-height: 0;
+}
+
+.nf-hide-btn svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.nf-hide-btn--modal svg {
+  width: 18px;
+  height: 18px;
+}
+
+[data-nf-hide-injected="1"]:hover .nf-hide-btn,
+.nf-hide-btn:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nf-hide-btn:hover {
+  background: #e50914;
+  transform: scale(1.08);
+}
+
+.nf-hide-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Preview modal (jawbone) acildiginda gosterilen buyuk varyant.
+   Hover beklemeden direkt gorunur; sol ust kosede ses ikonu / chevron ile cakismaz. */
+.nf-hide-btn--modal {
+  top: 12px;
+  left: 12px;
+  right: auto;
+  width: 36px;
+  height: 36px;
+  opacity: 1;
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.nf-hide-btn--modal:hover {
+  background: #e50914;
+  border-color: #fff;
+}
+
+.nf-hidden {
+  display: none !important;
+}
+
+/* Yedek: Netflix slot wrapper'larini bizim attribute'umuzla yakalayamasak da
+   icinde gizli kart varsa slot da otomatik kapansin. :has() Chrome 105+ destekli. */
+.slider-item:has(.nf-hidden),
+[class*="slider-item"]:has(.nf-hidden),
+.title-card-container:has(.nf-hidden),
+[data-uia="title-card-container"]:has(.nf-hidden),
+.lolomoPreviewImage:has(.nf-hidden),
+.galleryLockup:has(.nf-hidden),
+.galleryLockup--container:has(.nf-hidden) {
+  display: none !important;
+}
