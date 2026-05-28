@@ -2,6 +2,10 @@
 
 > *"Wait — I already watched this. Why is it still here?"*
 
+<p align="center">
+  <img src="screenshots/demo.png" alt="WatchedOut adds a hide button to Netflix's preview modal" width="900">
+</p>
+
 You know that feeling.
 
 You open Netflix to find something new. The first row is half stuff you already finished. So is the second. And the third. By the time you give up scrolling, twenty minutes have passed and you're rewatching *The Office* for the fourth time. Again.
