@@ -101,3 +101,15 @@
 .galleryLockup--container:has(.nf-hidden) {
   display: none !important;
 }
+
+/* Bir kart gizlenince Netflix slider track'i yeniden dizilir ve bir sonraki
+   sayfanin henuz hidrate olmamis bos placeholder slot'u (loadingTitle / loading-box)
+   gorunur alana kayip takili kalabilir. Bu hidrate olmamis slot'lari gizliyoruz.
+   Scroll'da slot hidrate olunca loadingTitle sinifi kalkar ve slot normal geri gelir,
+   yani kalici bir icerik kaybi olmaz. */
+.slider-item:has(> .loadingTitle),
+.slider-item:has([data-uia="loading-title"]),
+[class*="slider-item"]:has(> .loadingTitle),
+[class*="slider-item"]:has([data-uia="loading-title"]) {
+  display: none !important;
+}
